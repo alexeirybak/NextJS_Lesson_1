@@ -5,6 +5,10 @@ export default function Home() {
     <>
       <h1>Главная страница</h1>
       <Link href="about">На страницу о компании</Link>
+      <br />
+      <Link href="contacts" replace>
+        Наши контакты
+      </Link>
     </>
   );
 }
