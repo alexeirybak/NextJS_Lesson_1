@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ErrorWrapper from "./error-wrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,13 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <header>Шапка сайта</header>
-        <ErrorWrapper>{children}</ErrorWrapper>
-        <footer>Подвал сайта</footer>
+        <header className="bg-blue-300">Шапка сайта</header>
+        <main className="flex-grow">{children}</main>
+        <footer className="bg-gray-400">Подвал сайта</footer>
       </body>
     </html>
   );
