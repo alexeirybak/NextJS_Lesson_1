@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <div>Главная страница</div>
-      <Link href="/complex-dashboard">К панели управления</Link>
+      <Link href="/paint-feed">К галереи</Link>
     </>
   );
 }
