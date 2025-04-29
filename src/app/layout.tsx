@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Мое приложение на Next.js",
+  title: {
+    default: "Мое приложение на Next.js",
+    template: "%s | Мое приложение на Next.js",
+  },
   description: "Я изучаю Next.js последней версии",
 };
 
@@ -23,11 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <header className="bg-blue-300">Шапка сайта</header>
+        <main className="flex-grow">{children}</main>
+        <footer className="bg-gray-400">Подвал сайта</footer>
       </body>
     </html>
   );
