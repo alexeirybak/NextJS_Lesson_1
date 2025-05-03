@@ -1,18 +1,25 @@
 // import { type NextRequest } from "next/server";
 
 // export async function GET(request: NextRequest) {
-//   const requestHeaders = new Headers(request.headers);
-//   console.log(requestHeaders.get("Authorization"));
-//   return new Response("Данные пользователя");
+//   const theme = request.cookies.get("theme") || "light"; // Чтение cookies из запроса
+
+//   // Установка новой cookie через заголовок ответа
+//   return new Response(`Тема: ${theme}`, {
+//     headers: {
+//       "Set-Cookie": `theme=dark`,
+//       "Content-Type": "text/html; charset=UTF-8",
+//     },
+//   });
 // }
 
-import { headers } from "next/headers";
+import { cookies } from "next/headers";
 
 export async function GET() {
-  const headerList = await headers();
-  console.log(headerList.get("Authorization"));
+  const cookieStore = cookies();
 
-  //return new Response("<h1>Данные пользователя</h1>");
+  (await cookieStore).set("result", "100");
+
+  console.log((await cookieStore).get("result"));
 
   return new Response("<h1>Данные пользователя</h1>", {
     headers: {
@@ -20,37 +27,3 @@ export async function GET() {
     },
   });
 }
-
-// import { headers } from "next/headers";
-// export async function GET() {
-//   const headerList = headers();
-//   const acceptHeader = (await headerList).get("Accept");
-
-//   const userData = {
-//     name: "Иван Иванов",
-//     email: "ivan@example.com",
-//     role: "admin",
-//   };
-
-//   if (acceptHeader?.includes("application/json")) {
-//     return new Response(JSON.stringify(userData), {
-//       headers: {
-//         "Content-Type": "application/json; charset=UTF-8",
-//       },
-//     });
-//   }
-
-//   return new Response(
-//     `<h1>Профиль пользователя</h1>
-//     <ul>
-//     <li>Имя: ${userData.name}</li>
-//     <li>Email: ${userData.email}</li>
-//     <li>Роль: ${userData.role}</li>
-//     </ul>`,
-//     {
-//       headers: {
-//         "Content-Type": "text/html; charset=UTF-8",
-//       },
-//     }
-//   );
-// }
