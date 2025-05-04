@@ -1,4 +1,8 @@
-const API_URL = "https://users-project.free.beeceptor.com/api/v2/users";
+export const dynamic = "force-static";
+
+export const revalidate = 10;
+
+const API_URL = "https://67ed28164387d9117bbc7da1.mockapi.io/api/v1/comments";
 
 export async function GET() {
   try {
