@@ -1,3 +1,10 @@
+import Link from "next/link";
+
 export default function Home() {
-  return <div>Мое первое приложение на Next.js</div>;
+  return (
+    <>
+      <div>Главная</div>
+      <Link href="about">О компании</Link>
+    </>
+  );
 }
