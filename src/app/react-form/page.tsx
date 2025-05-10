@@ -1,16 +1,12 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
 export default function CreateProduct() {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
-
   const router = useRouter();
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
