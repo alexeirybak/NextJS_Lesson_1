@@ -1,12 +1,16 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+
 export default function CreateProduct() {
+
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -25,6 +29,7 @@ export default function CreateProduct() {
       setLoading(false);
     }
   };
+  
   return (
     <form onSubmit={handleSubmit} className="p-4 space-y-4 max-w-96">
       <label className="text-white">

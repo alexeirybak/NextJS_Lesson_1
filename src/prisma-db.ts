@@ -22,12 +22,14 @@ export async function getProducts() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   return prisma.product.findMany();
 }
+
 export async function getProduct(id: number) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
   return prisma.product.findUnique({
     where: { id },
   });
 }
+
 export async function addProduct(
   title: string,
   price: number,
@@ -38,6 +40,7 @@ export async function addProduct(
     data: { title, price, description },
   });
 }
+
 export async function updateProduct(
   id: number,
   title: string,
@@ -50,6 +53,7 @@ export async function updateProduct(
     data: { title, price, description },
   });
 }
+
 export async function deleteProduct(id: number) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
   return prisma.product.delete({
