@@ -24,8 +24,16 @@ export async function getProducts(query?: string) {
     return prisma.product.findMany({
       where: {
         OR: [
-          { title: { contains: query } },
-          { description: { contains: query } },
+          {
+            title: {
+              contains: query,
+            },
+          },
+          {
+            description: {
+              contains: query,
+            },
+          },
         ],
       },
     });
