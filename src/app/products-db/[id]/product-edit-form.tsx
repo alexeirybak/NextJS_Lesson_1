@@ -21,24 +21,8 @@ export default function EditProductForm({ product }: { product: Product }) {
     initialState
   );
 
-  //   const editProductWithId = editProduct.bind(null, product.id);
-
-  //   function multiply(a, b) {
-  //     return a * b;
-  //   }
-
-  //   const double = multiply.bind(null, 2);
-
-  //   console.log(double(5));// 10
-
-  //   const [state, formAction, isPending] = useActionState(
-  //     editProductWithId,
-  //     initialState
-  //   );
-
   return (
     <form action={formAction} className="p-4 space-y-4 max-w-96">
-      {/* <input name="id" value={product.id} /> */}
       <div>
         <label className="text-white">
           Название
