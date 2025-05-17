@@ -1,11 +1,5 @@
-import { Search } from "@/components/search";
+import { Counter } from "@/components/Counter";
 
 export default function Home() {
-  return (
-    <>
-      <main>
-        <Search />
-      </main>
-    </>
-  );
+  return <Counter />;
 }
