@@ -1,3 +1,5 @@
+import { Counter } from "@/components/Counter";
+
 export default function Home() {
-  return <div>Мое первое приложение на Next.js</div>;
+  return <Counter />;
 }
