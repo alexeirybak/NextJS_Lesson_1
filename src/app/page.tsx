@@ -1,34 +1,72 @@
-import Image from "next/image";
-import localImage from "/public/nature.jpg";
+import { Roboto_Condensed, Ballet } from "next/font/google";
+import localFont from "next/font/local";
+
+const someGoogleFont = Roboto_Condensed({
+  subsets: ["latin"],
+});
+
+const someGoogleFont2 = Ballet({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-some-google-font-2",
+});
+
+const lastFont = localFont({
+  src: "./../../assets/fonts/KosolapaScript-Regular.ttf",
+});
 
 export default function Home() {
   return (
     <>
-      <h1>Работа с изображениями</h1>
-      <Image
-        src="https://static-cse.canva.com/blob/846900/photo1502082553048f009c37129b9e1583341920812.jpeg"
-        alt="Описание изображения"
-        width={500}
-        height={300}
-      />
-      <Image
-        src="https://i.pinimg.com/736x/be/39/7c/be397c91b8026b17f5f8a6ed98e23e9e.jpg"
-        alt="Описание изображения"
-        width={500}
-        height={300}
-      />
-      {/* <Image src={localImage} alt="Описание изображения" /> */}
-      {/* <div className="w-full md:w-1/2 lg:w-1/3 border-2 border-green-600 relative h-[300px]">
-        <Image
-          src="/nature.jpg"
-          alt="Описание изображения"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1220px) 50vw, 33vw"
-          quality={90}
-          // Чтобы не было искажения по ширине и высоте
-        />
-      </div> */}
+      <h1 className={`${lastFont.className} text-9xl`}>Работа со шрифтами</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde assumenda
+        vel modi officiis totam, sapiente eos rerum soluta pariatur! Adipisci
+        quis amet iusto non cum, velit doloremque. Et eveniet maxime laboriosam
+        labore aut incidunt vel accusantium ad a, dolorum porro, nemo,
+        temporibus exercitationem cumque aliquam atque assumenda recusandae
+        asperiores veniam fugiat necessitatibus sapiente magni repellat
+        reiciendis. Repellat reiciendis quos non, fuga necessitatibus numquam
+        laudantium dolore sapiente suscipit reprehenderit vel quidem itaque
+        deleniti quia sequi rerum, iure nobis ex laboriosam! Tenetur repellat
+        non cum itaque eos dolore, quo nam est, voluptatem impedit esse quas?
+        Officia recusandae voluptate nam cum impedit adipisci.
+      </p>
+      <br />
+      <p className={`${someGoogleFont.className}`}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde assumenda
+        vel modi officiis totam, sapiente eos rerum soluta pariatur! Adipisci
+        quis amet iusto non cum, velit doloremque. Et eveniet maxime laboriosam
+        labore aut incidunt vel accusantium ad a, dolorum porro, nemo,
+        temporibus exercitationem cumque aliquam atque assumenda recusandae
+        asperiores veniam fugiat necessitatibus sapiente magni repellat
+        reiciendis. Repellat reiciendis quos non, fuga necessitatibus numquam
+        laudantium dolore sapiente suscipit reprehenderit vel quidem itaque
+        deleniti quia sequi rerum, iure nobis ex laboriosam! Tenetur repellat
+        non cum itaque eos dolore, quo nam est, voluptatem impedit esse quas?
+        Officia recusandae voluptate nam cum impedit adipisci.
+      </p>
+      <p className={`${someGoogleFont2.variable}`}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde assumenda
+        vel modi officiis totam, sapiente eos rerum soluta pariatur! Adipisci
+        quis amet iusto non cum, velit doloremque. Et eveniet maxime laboriosam
+        labore aut incidunt vel accusantium ad a, dolorum porro, nemo,
+        temporibus
+        <span className="font-ballet text-red-500">
+          asperiores veniam fugiat necessitatibus sapiente magni repellat
+          reiciendis. Repellat reiciendis quos non, fuga necessitatibus numquam
+          laudantium dolore sapiente suscipit reprehenderit vel quidem itaque
+          deleniti quia sequi rerum, iure nobis ex laboriosam! Tenetur repellat
+          non cum itaque eos dolore, quo nam est, voluptatem
+        </span>
+        exercitationem cumque aliquam atque assumenda recusandae impedit esse
+        quas? Officia recusandae voluptate nam cum impedit adipisci.
+      </p>
+      <p className={`${someGoogleFont2.className}`}>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iste
+        nisi fuga, odit neque earum mollitia repellat aperiam. Delectus,
+        praesentium?
+      </p>
     </>
   );
 }
